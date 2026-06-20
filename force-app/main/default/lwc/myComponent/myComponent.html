@@ -1,0 +1,11 @@
+<template>
+    <template if:true={recordId}>
+        <lightning-input label="Name" value={greeting} onchange={handleChange}>>
+            </lightning-input>
+        <lightning-button label="Show Greeting Value" onclick={handleButtonClick}>
+        </lightning-button> 
+        <template if:true={booleanValue}>
+            <p>Conditional Rendering</p>
+        </template>
+    </template>
+   </template>

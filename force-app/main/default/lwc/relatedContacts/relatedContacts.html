@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <h1>Related Contacts</h1>
+        <template if:true={recordId}>
+            <lightning-datatable
+            data={contacts}
+            columns={columns}
+            key-field="Id"
+            enable-infinite-loading
+            onloadmore={loadMoreData}
+            hide-checkbox-column="true"
+            show-row-number-column="true"
+        >
+        </lightning-datatable>
+        </template>
+        <p class="texts">There are {numberOfContacts} contacts</p>
+    </lightning-card>
+</template>

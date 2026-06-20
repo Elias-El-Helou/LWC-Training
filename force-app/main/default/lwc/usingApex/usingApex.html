@@ -1,0 +1,16 @@
+<template>
+    <template if:true={loading}>
+        <lightning-spinner variant="brand" size="large"> </lightning-spinner>
+    </template>
+    <lightning-card>
+        <template for:each={accounts} for:item="acc">
+            <div key={acc.Id}>
+                {acc.Name}
+            </div>
+        </template>
+        <lightning-input label="Name" value={accountName} onchange={handleChange}></lightning-input>
+        
+        <lightning-button label="Create Account" onclick={handleClick}></lightning-button>
+        
+    </lightning-card>
+</template>

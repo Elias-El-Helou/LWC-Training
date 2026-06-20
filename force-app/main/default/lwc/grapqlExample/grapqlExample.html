@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Accounts with GraphQL" icon-name="standard:account">
+        <template lwc:if={results}>
+            <template for:each={results} for:item="account">
+                <div key={account.Id}>
+                    <lightning-card>
+                        <h1 slot="title">{account.Name.value}</h1>
+                    </lightning-card>
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+  </template>

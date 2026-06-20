@@ -1,0 +1,11 @@
+<template>
+	<lightning-input label="Name" value={greeting} onchange={handleGreetingChange}>
+     	</lightning-input>
+	<lightning-button label="Show Greeting Value" onclick={handleButtonClick}>
+	</lightning-button>
+	<template lwc:if={displayCourses}>
+		<template for:each={classes} for:item="cl">
+			<lightning-card title={cl} key={cl}></lightning-card>
+		</template>
+	</template> 
+</template>

@@ -1,0 +1,16 @@
+<template>
+    
+        <lightning-card title="Accounts"><span >{recordId}</span>
+            <template if:true={recordId}>
+                
+            <ul>
+                <template for:each={tenAccounts} for:item="acc">
+                    <li key={acc.Id}>
+                        {acc.Name}
+                    </li>
+                </template>
+            </ul>
+        </template>
+        <lightning-button onclick={increment} label="Increment"></lightning-button>
+        </lightning-card>
+</template>
