@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Parent Component">
+      <p style="font-size:x-large;">Hello from Parent!!</p>
+      <c-first-child-component onmycustomevent={handleChildEvent} lwc:spread={childProps} lwc:ref="childRef" message={inputMessage}></c-first-child-component>
+      <lightning-button onclick={incrementChildCounter} label="Increment Child" variant="brand"></lightning-button>
+      <lightning-input label="Enter a message" value={inputMessage} onchange={handleInput}></lightning-input>
+      <p>Child Message: {childMessage}</p>
+    </lightning-card>
+</template>
