@@ -1,0 +1,71 @@
+<template>
+    <lightning-card title="Employee Management">
+
+        <div class="slds-p-around_medium">
+
+            <lightning-input
+                label="Employee Name"
+                name="name"
+                value={employee.name}
+                onchange={handleChange}>
+            </lightning-input>
+
+            <lightning-input
+                label="Age"
+                name="age"
+                type="number"
+                value={employee.age}
+                onchange={handleChange}>
+            </lightning-input>
+
+            <lightning-input
+                label="Email"
+                name="email"
+                type="email"
+                value={employee.email}
+                onchange={handleChange}>
+            </lightning-input>
+
+            <lightning-button
+                label="Add Employee"
+                variant="brand"
+                class="slds-m-top_medium"
+                onclick={addEmployee}>
+            </lightning-button>
+
+        </div>
+
+        <template lwc:if={hasEmployees}>
+            <div class="slds-p-around_medium">
+
+                <h2 class="slds-text-heading_small">
+                    Employees
+                </h2>
+
+                <template
+                    for:each={employees}
+                    for:item="emp">
+
+                    <lightning-card
+                        key={emp.id}
+                        class="slds-m-top_small">
+
+                        <div class="slds-p-around_small">
+                            <p><strong>Name:</strong> {emp.name}</p>
+                            <p><strong>Age:</strong> {emp.age}</p>
+                            <p><strong>Email:</strong> {emp.email}</p>
+                        </div>
+                        <lightning-button
+                            label="Delete"
+                            data-id={emp.id}
+                            onclick={deleteEmployee}>
+                        </lightning-button>
+                    </lightning-card>
+
+                </template>
+
+            </div>
+        </template>
+
+    </lightning-card>
+</template>

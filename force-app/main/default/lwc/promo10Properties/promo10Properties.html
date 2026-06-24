@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Track Demo">
+    <p>{greeting}</p>
+     <lightning-input label="Name" value={greeting} onchange={handleChange}>
+     </lightning-input>
+     <lightning-button label="Show Paragraph" onclick={handleClick}></lightning-button>
+     <lwc if:true={renderParagraph} >
+        <p>Conditional Render</p>
+     </lwc>
+    </lightning-card>
+</template>

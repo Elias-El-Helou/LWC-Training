@@ -7,8 +7,8 @@ public with sharing class AccountController {
         return acc.Id;
     }
     @AuraEnabled(cacheable=true)
-    public static List<Account> getAccounts() {
-        List<Account> accounts=[SELECT Id, Name FROM Account ORDER BY CreatedDate DESC LIMIT 10];
+    public static List<Account> getAccounts(Integer maxRecords) {
+        List<Account> accounts=[SELECT Id, Name FROM Account ORDER BY CreatedDate DESC LIMIT :maxRecords];
         return accounts;
     }
 }
